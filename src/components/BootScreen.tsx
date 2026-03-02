@@ -50,7 +50,7 @@ export const BootScreen: React.FC<BootScreenProps> = ({ onComplete }) => {
             } : {
               rotate: 720,
               scale: 1,
-              x: -302, 
+              x: -312, 
               y: 0,
             }}
             transition={{ 
