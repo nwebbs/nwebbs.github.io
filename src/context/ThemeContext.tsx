@@ -5,9 +5,9 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
  * Edit these values to change the site's colors and effects.
  */
 const CONFIG = {
-  primary: '#d49f0f',   // Main highlight color (Cyan)
-  secondary: '#8a670a', // Accent color (Pink)
-  accent: '#bd00ff',    // Tertiary color (Purple)
+  primary: '#ab9150',   // Main highlight color 
+  secondary: '#ab9150', // Accent color
+  accent: '#bd00ff',    // Tertiary color 
 
   iconGlowPrimary: '#666666',   // Mascot glow start color
   iconGlowSecondary: '#666666', // Mascot glow end color
