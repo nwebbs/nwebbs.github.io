@@ -38,6 +38,11 @@ type Theme = {
   starSpeed: number;
 };
 
+type ThemeContextType = {
+  theme: Theme;
+  updateTheme: (updates: Partial<Theme>) => void;
+};
+
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {

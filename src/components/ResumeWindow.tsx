@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Download } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 interface ResumeWindowProps {
@@ -57,14 +58,27 @@ export const ResumeWindow: React.FC<ResumeWindowProps> = ({ name }) => {
         <div className="flex-1 p-6 md:p-10 win95-inset m-1 bg-black/40 backdrop-blur-sm relative z-10 overflow-y-auto flex flex-col">
           {activeTab === 'Info' && (
             <div className="flex-1 flex flex-col space-y-8">
-              <header className="text-center space-y-2 border-b border-white/10 pb-6">
-                <h1 
-                  className="text-4xl md:text-5xl font-bold tracking-tighter uppercase animate-glow"
-                  style={{ color: theme.primary }}
-                >
-                  {name}
-                </h1>
-                <p className="text-xs opacity-50 font-mono tracking-widest uppercase">Full Stack Video Game Developer</p>
+              <header className="text-center space-y-4 border-b border-white/10 pb-6">
+                <div className="space-y-2">
+                  <h1 
+                    className="text-4xl md:text-5xl font-bold tracking-tighter uppercase animate-glow"
+                    style={{ color: theme.primary }}
+                  >
+                    {name}
+                  </h1>
+                  <p className="text-xs opacity-50 font-mono tracking-widest uppercase">Full Stack Video Game Developer</p>
+                </div>
+                
+                <div className="flex justify-center">
+                  <a 
+                    href="/resume.pdf" 
+                    download
+                    className="win95-outset bg-gray-800 hover:bg-gray-700 px-4 py-2 flex items-center gap-2 text-[10px] font-bold uppercase tracking-tighter transition-colors text-gray-300 active:win95-inset"
+                  >
+                    <Download className="w-3 h-3" />
+                    DOWNLOAD_PDF
+                  </a>
+                </div>
               </header>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm font-mono flex-grow">
