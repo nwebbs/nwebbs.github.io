@@ -54,20 +54,20 @@ export const ResumeWindow: React.FC<ResumeWindowProps> = ({ name }) => {
         </div>
         
         {/* Content Area */}
-        <div className="flex-1 p-6 md:p-10 win95-inset m-1 bg-black/40 backdrop-blur-sm relative z-10 overflow-y-auto">
+        <div className="flex-1 p-6 md:p-10 win95-inset m-1 bg-black/40 backdrop-blur-sm relative z-10 overflow-y-auto flex flex-col">
           {activeTab === 'Info' && (
-            <div className="space-y-8">
+            <div className="flex-1 flex flex-col space-y-8">
               <header className="text-center space-y-2 border-b border-white/10 pb-6">
                 <h1 
-                  className="text-4xl md:text-5xl font-bold tracking-tighter uppercase italic"
-                  style={{ color: theme.primary, textShadow: `2px 2px ${theme.secondary}66` }}
+                  className="text-4xl md:text-5xl font-bold tracking-tighter uppercase animate-glow"
+                  style={{ color: theme.primary }}
                 >
                   {name}
                 </h1>
                 <p className="text-xs opacity-50 font-mono tracking-widest uppercase">Full Stack Video Game Developer</p>
               </header>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm font-mono">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm font-mono flex-grow">
                 <section className="space-y-4">
                   <h2 className="text-lg font-bold flex items-center gap-2" style={{ color: theme.secondary }}>
                     <span className="w-2 h-2 bg-current" />
@@ -75,14 +75,14 @@ export const ResumeWindow: React.FC<ResumeWindowProps> = ({ name }) => {
                   </h2>
                   <div className="space-y-4 border-l-2 border-white/10 pl-4 ml-1">
                     <div className="space-y-1">
-                      <h3 className="font-bold text-white">Lead Developer @ TechCorp</h3>
+                      <h3 className="font-bold text-white">Data Entry Analyst</h3>
                       <p className="text-[10px] opacity-50 italic">2022 - PRESENT</p>
-                      <p className="text-gray-400 leading-relaxed">Spearheaded the development of high-performance distributed systems using React and Rust. Optimized cloud infrastructure, reducing costs by 30%.</p>
+                      <p className="text-gray-400 leading-relaxed">.</p>
                     </div>
                     <div className="space-y-1">
-                      <h3 className="font-bold text-white">Software Engineer @ InnovateSoft</h3>
+                      <h3 className="font-bold text-white">Insulation Worker</h3>
                       <p className="text-[10px] opacity-50 italic">2020 - 2022</p>
-                      <p className="text-gray-400 leading-relaxed">Built scalable microservices and implemented modern CI/CD pipelines. Collaborated with design teams to deliver pixel-perfect UIs.</p>
+                      <p className="text-gray-400 leading-relaxed">.</p>
                     </div>
                   </div>
                 </section>
@@ -96,7 +96,7 @@ export const ResumeWindow: React.FC<ResumeWindowProps> = ({ name }) => {
                     <div className="space-y-3 border-l-2 border-white/10 pl-4 ml-1">
                       <div>
                         <h3 className="font-bold text-white italic">B.S. Computer Science</h3>
-                        <p className="text-xs text-gray-400">University of Engineering</p>
+                        <p className="text-xs text-gray-400">University of Buffalo</p>
                       </div>
                     </div>
                   </section>
@@ -107,7 +107,7 @@ export const ResumeWindow: React.FC<ResumeWindowProps> = ({ name }) => {
                       SKILLS
                     </h2>
                     <div className="flex flex-wrap gap-2">
-                      {['React', 'TypeScript', 'Tailwind', 'Node.js', 'Rust', 'PostgreSQL', 'Docker'].map(skill => (
+                      {['C++', 'Java', 'Python', 'Node.js', 'PostgreSQL', 'Docker', 'HTML/CSS'].map(skill => (
                         <span key={skill} className="px-2 py-0.5 bg-white/5 win95-outset text-[10px] text-gray-300">
                           {skill}
                         </span>
@@ -117,8 +117,8 @@ export const ResumeWindow: React.FC<ResumeWindowProps> = ({ name }) => {
                 </div>
               </div>
 
-              <footer className="pt-10 opacity-30 text-[8px] font-mono text-center uppercase tracking-[0.5em]">
-                System Residue © 2026 - No Rights Reserved
+              <footer className="pt-10 mt-auto opacity-30 text-[8px] font-mono text-center uppercase tracking-[0.5em]">
+                Nicholas Webb Seamans © 2026 - No Rights Reserved
               </footer>
             </div>
           )}
@@ -129,14 +129,15 @@ export const ResumeWindow: React.FC<ResumeWindowProps> = ({ name }) => {
               <p className="text-[10px] mt-2">Initialize directory scanning...</p>
             </div>
           )}
-
+          
+            
           {activeTab === 'Contact' && (
             <div className="space-y-6">
               <h2 className="text-lg font-bold italic" style={{ color: theme.secondary }}>CONNECT_WITH_USER</h2>
               <div className="win95-inset p-4 space-y-2 bg-black/20">
-                <p>EMAIL: hello@example.com</p>
-                <p>GITHUB: github.com/username</p>
-                <p>TWITTER: @username</p>
+                <p>EMAIL: contact@nwebbs.dev</p>
+                <p>GITHUB: github.com/nwebbs</p>
+                <p>LINKEDIN: </p>
               </div>
             </div>
           )}

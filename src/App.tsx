@@ -18,7 +18,7 @@ const MainLayout = () => {
       )}
 
       <main className="flex-1 relative z-10 flex flex-col overflow-y-auto">
-        <ResumeWindow name="YOUR NAME" />
+        <ResumeWindow name="Nicholas Webb Seamans" />
       </main>
     </div>
   );

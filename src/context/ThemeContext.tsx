@@ -1,9 +1,35 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
+/**
+ * THEME CONFIGURATION
+ * Edit these values to change the site's colors and effects.
+ */
+const CONFIG = {
+  primary: '#d49f0f',   // Main highlight color (Cyan)
+  secondary: '#8a670a', // Accent color (Pink)
+  accent: '#bd00ff',    // Tertiary color (Purple)
+  
+  glowPulsing: false,     // Toggle if the glow pulses
+  glowBrightness: 1.0,   // Multiplier for glow intensity (0.0 to 2.0+)
+
+  crtEnabled: true,      // Toggle the scanline/flicker effect
+  starColor: '#ffffff',  // Color of the background stars
+  starSpeed: 1,          // Speed of star movement
+  starDirection: 'down' as const, // 'up' | 'down' | 'left' | 'right' | 'towards' | 'away'
+};
+
+const defaultTheme: Theme = {
+  ...CONFIG,
+  taskbarPosition: 'top',
+  showDesktopIcons: false,
+};
+
 type Theme = {
   primary: string;
   secondary: string;
   accent: string;
+  glowPulsing: boolean;
+  glowBrightness: number;
   taskbarPosition: 'top' | 'bottom';
   crtEnabled: boolean;
   showDesktopIcons: boolean;
@@ -12,30 +38,14 @@ type Theme = {
   starSpeed: number;
 };
 
-type ThemeContextType = {
-  theme: Theme;
-  updateTheme: (updates: Partial<Theme>) => void;
-};
-
-const defaultTheme: Theme = {
-  primary: '#05d9e8',   // Cyan
-  secondary: '#ff2a6d', // Pink
-  accent: '#bd00ff',    // Purple
-  taskbarPosition: 'top',
-  crtEnabled: true,
-  showDesktopIcons: false,
-  starColor: '#ffffff',
-  starDirection: 'down',
-  starSpeed: 1,
-};
-
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     const saved = localStorage.getItem('sknii-theme');
     if (saved) {
-      return { ...defaultTheme, ...JSON.parse(saved) };
+      // Prioritize CONFIG values over saved localStorage values for easier editing
+      return { ...JSON.parse(saved), ...CONFIG };
     }
     return defaultTheme;
   });
@@ -76,6 +86,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           '--color-primary': theme.primary,
           '--color-secondary': theme.secondary,
           '--color-accent': theme.accent,
+          '--glow-brightness': theme.glowBrightness,
+          '--glow-animation': theme.glowPulsing ? 'glow 3s ease-in-out infinite alternate' : 'none',
         }}
         className="contents"
       >

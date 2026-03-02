@@ -94,6 +94,29 @@ body {
   100% { transform: translateY(100vh); }
 }
 
+@keyframes glow {
+  0% { 
+    text-shadow: 
+      0 0 calc(5px * var(--glow-brightness)) var(--color-primary), 
+      0 0 calc(10px * var(--glow-brightness)) var(--color-primary); 
+  }
+  100% { 
+    text-shadow: 
+      0 0 calc(15px * var(--glow-brightness)) var(--color-secondary), 
+      0 0 calc(20px * var(--glow-brightness)) var(--color-secondary); 
+  }
+}
+
+.animate-glow {
+  /* Use variable to determine if we animate or stay static */
+  animation: var(--glow-animation, none);
+  
+  /* Fallback static shadow (used when animation is none or paused at 0%) */
+  text-shadow: 
+    0 0 calc(10px * var(--glow-brightness)) var(--color-primary),
+    0 0 calc(15px * var(--glow-brightness)) var(--color-secondary);
+}
+
 @theme {
   --font-lunch: 'Lunch', sans-serif;
 }
