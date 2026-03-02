@@ -8,6 +8,9 @@ const CONFIG = {
   primary: '#d49f0f',   // Main highlight color (Cyan)
   secondary: '#8a670a', // Accent color (Pink)
   accent: '#bd00ff',    // Tertiary color (Purple)
+
+  iconGlowPrimary: '#666666',   // Mascot glow start color
+  iconGlowSecondary: '#666666', // Mascot glow end color
   
   glowPulsing: false,     // Toggle if the glow pulses
   glowBrightness: 1.0,   // Multiplier for glow intensity (0.0 to 2.0+)
@@ -28,6 +31,8 @@ type Theme = {
   primary: string;
   secondary: string;
   accent: string;
+  iconGlowPrimary: string;
+  iconGlowSecondary: string;
   glowPulsing: boolean;
   glowBrightness: number;
   taskbarPosition: 'top' | 'bottom';
@@ -88,11 +93,14 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       <div 
         style={{ 
           //@ts-ignore
-          '--color-primary': theme.primary,
-          '--color-secondary': theme.secondary,
-          '--color-accent': theme.accent,
-          '--glow-brightness': theme.glowBrightness,
-          '--glow-animation': theme.glowPulsing ? 'glow 3s ease-in-out infinite alternate' : 'none',
+          '--color-primary': CONFIG.primary,
+          '--color-secondary': CONFIG.secondary,
+          '--color-accent': CONFIG.accent,
+          '--color-icon-glow-primary': CONFIG.iconGlowPrimary,
+          '--color-icon-glow-secondary': CONFIG.iconGlowSecondary,
+          '--glow-brightness': CONFIG.glowBrightness,
+          '--glow-animation': CONFIG.glowPulsing ? 'glow 3s ease-in-out infinite alternate' : 'none',
+          '--glow-animation-icon': CONFIG.glowPulsing ? 'icon-glow 3s ease-in-out infinite alternate' : 'none',
         }}
         className="contents"
       >

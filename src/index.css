@@ -117,6 +117,21 @@ body {
     0 0 calc(15px * var(--glow-brightness)) var(--color-secondary);
 }
 
+@keyframes icon-glow {
+  0% { 
+    filter: drop-shadow(0 0 4px var(--color-icon-glow-primary)); 
+  }
+  100% { 
+    filter: drop-shadow(0 0 10px var(--color-icon-glow-secondary)); 
+  }
+}
+
+.animate-icon-glow {
+  animation: var(--glow-animation-icon, none);
+  /* Static fallback */
+  filter: drop-shadow(0 0 6px var(--color-icon-glow-primary));
+}
+
 @theme {
   --font-lunch: 'Lunch', sans-serif;
 }
