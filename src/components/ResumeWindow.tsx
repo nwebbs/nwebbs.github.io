@@ -15,22 +15,28 @@ export const ResumeWindow: React.FC<ResumeWindowProps> = ({ name }) => {
 
   return (
     <div className="flex-1 flex items-start justify-center p-4 md:p-8 overflow-y-auto">
-      <motion.div 
-        initial={{ scale: 0.98, opacity: 0, y: 20 }}
-        animate={{ scale: 1, opacity: 1, y: 0 }}
-        className="win95-outset surface-grit w-full max-w-2xl min-h-[80vh] flex flex-col relative z-10"
-      >
+      <div className="win95-outset surface-grit w-full max-w-2xl flex flex-col relative z-10">
         {/* Title Bar with Tabs */}
         <div 
           className="p-1 flex items-center justify-between select-none relative z-10 border-b border-black/20"
           style={{ backgroundColor: `${theme.primary}33` }}
         >
           <div className="flex items-center gap-0">
-            <div className="px-2 border-r border-black/20 mr-2">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.1 }}
+              className="px-2 border-r border-black/20 mr-2"
+            >
               <img src="/assets/icons/launcher-rune.svg" alt="Rune" className="w-5 h-5" />
-            </div>
+            </motion.div>
             
-            <div className="flex gap-1">
+            <motion.div 
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex gap-1"
+            >
               {tabs.map(tab => (
                 <button
                   key={tab}
@@ -44,7 +50,7 @@ export const ResumeWindow: React.FC<ResumeWindowProps> = ({ name }) => {
                   {tab}
                 </button>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           <div className="hidden md:flex gap-1 pr-1">
@@ -54,10 +60,16 @@ export const ResumeWindow: React.FC<ResumeWindowProps> = ({ name }) => {
           </div>
         </div>
         
-        {/* Content Area */}
-        <div className="flex-1 p-6 md:p-10 win95-inset m-1 bg-black/40 backdrop-blur-sm relative z-10 overflow-y-auto flex flex-col">
+        {/* Content Area - Slides out vertically */}
+        <motion.div 
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+          className="win95-inset m-1 bg-black/40 backdrop-blur-sm relative z-10 overflow-hidden flex flex-col"
+        >
           {activeTab === 'Info' && (
-            <div className="flex-1 flex flex-col space-y-8">
+            <div className="p-6 md:p-10 flex flex-col min-h-[500px] flex-1">
+              <div className="flex-1 flex flex-col space-y-8">
               <header className="text-center space-y-4 border-b border-white/10 pb-6">
                 <div className="space-y-2">
                   <h1 
@@ -174,28 +186,33 @@ export const ResumeWindow: React.FC<ResumeWindowProps> = ({ name }) => {
                 Nicholas Webb Seamans © 2026 - No Rights Reserved
               </footer>
             </div>
-          )}
+          </div>
+        )}
 
           {activeTab === 'Projects' && (
-            <div className="flex flex-col items-center justify-center py-20 opacity-50 italic">
-              <p>Project Archive: Access Denied</p>
-              <p className="text-[14px] mt-2">Come back later!</p>
+            <div className="p-6 md:p-10 flex flex-col min-h-[500px] flex-1">
+              <div className="flex flex-col items-center justify-center py-20 opacity-50 italic">
+                <p>Project Archive: Access Denied</p>
+                <p className="text-[14px] mt-2">Come back later!</p>
+              </div>
             </div>
           )}
           
             
           {activeTab === 'Contact' && (
-            <div className="space-y-6">
-              <h2 className="text-lg font-bold italic" style={{ color: theme.secondary }}>CONNECT_WITH_USER</h2>
-              <div className="win95-inset p-4 space-y-2 bg-black/20">
-                <p>EMAIL: contact@nwebbs.dev</p>
-                <p>GITHUB: github.com/nwebbs</p>
-                <p>LINKEDIN: </p>
+            <div className="p-6 md:p-10 flex flex-col min-h-[500px] flex-1">
+              <div className="space-y-6">
+                <h2 className="text-lg font-bold italic" style={{ color: theme.secondary }}>CONNECT_WITH_USER</h2>
+                <div className="win95-inset p-4 space-y-2 bg-black/20">
+                  <p>EMAIL: contact@nwebbs.dev</p>
+                  <p>GITHUB: github.com/nwebbs</p>
+                  <p>LINKEDIN: </p>
+                </div>
               </div>
             </div>
           )}
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 };
