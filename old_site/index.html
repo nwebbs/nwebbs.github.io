@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Placeholder</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top border-bottom border-secondary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Nicholas Webb Seamans</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-2 fw-bold mb-3">Creative Developer & Designer</h1>
+            <p class="lead mb-4 text-secondary">Crafting digital experiences with precision and passion. Currently building something amazing.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#projects" class="btn btn-primary btn-lg px-4">View My Work</a>
+                <a href="#contact" class="btn btn-outline-light btn-lg px-4">Get In Touch</a>
+            </div>
+            <div class="mt-5 fs-3">
+                <a href="#" class="text-light me-4"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-light me-4"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-light"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-dark">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">About Me</h2>
+                    <p class="text-secondary fs-5">
+                        Hello! I'm a developer focused on creating clean, efficient, and user-centric applications. 
+                        With a background in [Your Field], I enjoy bridging the gap between design and technology.
+                    </p>
+                    <p class="text-secondary fs-5">
+                        This site is currently a work in progress as I prepare to showcase my latest projects. 
+                        Stay tuned for updates!
+                    </p>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <div class="p-4 border border-secondary rounded-4 bg-black">
+                        <h4 class="fw-bold mb-3">Core Skills</h4>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-secondary">JavaScript</span>
+                            <span class="badge bg-secondary">TypeScript</span>
+                            <span class="badge bg-secondary">React</span>
+                            <span class="badge bg-secondary">Node.js</span>
+                            <span class="badge bg-secondary">Python</span>
+                            <span class="badge bg-secondary">UI/UX Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-black">
+        <div class="container py-5">
+            <h2 class="fw-bold mb-5 text-center">Featured Projects</h2>
+            <div class="row g-4">
+                <!-- Project Placeholder 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 bg-dark border-secondary project-card">
+                        <div class="card-body p-4">
+                            <div class="mb-3 fs-1 text-primary"><i class="fas fa-code-branch"></i></div>
+                            <h5 class="card-title fw-bold">Project One</h5>
+                            <p class="card-text text-secondary">A sophisticated web application designed to solve complex problems. Built with React and Node.js.</p>
+                            <a href="#" class="btn btn-sm btn-outline-primary mt-2">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Placeholder 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 bg-dark border-secondary project-card">
+                        <div class="card-body p-4">
+                            <div class="mb-3 fs-1 text-success"><i class="fas fa-layer-group"></i></div>
+                            <h5 class="card-title fw-bold">Project Two</h5>
+                            <p class="card-text text-secondary">An intuitive mobile experience focused on productivity and seamless user workflows.</p>
+                            <a href="#" class="btn btn-sm btn-outline-success mt-2">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Placeholder 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 bg-dark border-secondary project-card">
+                        <div class="card-body p-4">
+                            <div class="mb-3 fs-1 text-info"><i class="fas fa-database"></i></div>
+                            <h5 class="card-title fw-bold">Project Three</h5>
+                            <p class="card-text text-secondary">High-performance data visualization dashboard for real-time analytics and insights.</p>
+                            <a href="#" class="btn btn-sm btn-outline-info mt-2">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-dark">
+        <div class="container py-5 text-center">
+            <h2 class="fw-bold mb-4">Let's Connect</h2>
+            <p class="lead text-secondary mb-5">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+            <div class="d-flex justify-content-center gap-4 fs-4">
+                <a href="mailto:your.email@example.com" class="text-light"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="text-light"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-light"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="mt-5">
+                <a href="#" class="btn btn-primary px-5 py-2 fw-bold">Download Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-black border-top border-secondary text-center">
+        <p class="text-secondary mb-0">&copy; 2024 [YOUR NAME]. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
