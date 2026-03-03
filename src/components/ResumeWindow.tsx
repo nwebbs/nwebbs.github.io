@@ -78,7 +78,7 @@ export const ResumeWindow: React.FC<ResumeWindowProps> = ({ name }) => {
                   >
                     {name}
                   </h1>
-                  <p className="text-xs opacity-50 font-mono tracking-widest uppercase">Full Stack Developer and Artist</p>
+                  <p className="text-xs opacity-50 font-mono tracking-widest uppercase">Full Stack Developer and Digital Artist</p>
                 </div>
                 
                 <div className="flex justify-center">
@@ -160,7 +160,7 @@ export const ResumeWindow: React.FC<ResumeWindowProps> = ({ name }) => {
                       <div className="space-y-2 mt-1">
                         <p className="text-gray-400 leading-relaxed text-xs flex gap-2">
                           <span className="text-secondary">•</span>
-                          Processed high-volume PII records with a focus on data integrity, consistently achieving near highest accuracy ratings in a fast-paced, audit-ready banking environment.
+                          Processed high-volumes of records with a focus on data integrity, consistently achieving near highest accuracy ratings in a fast-paced, audit-ready banking environment.
                         </p>
                       </div>
                     </div>
